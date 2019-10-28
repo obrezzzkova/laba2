@@ -2,19 +2,12 @@
 from librip.gens import gen_random
 from librip.iterators import Unique
 
+# Реализация задания 2
 data1 = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
 data2 = gen_random(1, 3, 10)
+data4 = [1, 1, 1, 1, 1, 2, 'a', 'A', 'b', 'c', 'C']
 
-# Реализация задания 2
-
-print(data1)
-itera = Unique(data1, ignore_case=False)
-
-for i in itera:
-    print(i, end=" ")
-print()
-print(data2)
-itera = Unique(data2, ignore_case=False)
-
-for i in itera:
-    print(i, end=" ")
+print(*Unique(data1))
+print(*Unique(data2))
+print(*Unique(data3, ignore_case=True))
+print(*Unique(data4, ignore_case=True))
